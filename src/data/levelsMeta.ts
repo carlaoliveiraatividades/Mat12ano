@@ -4,74 +4,51 @@ export const AGE_LEVELS: AgeLevelMeta[] = [
   {
     id: '6',
     badge: '🧒 6 ANOS',
-    label: '6 Anos',
-    quote: '“Explica-me como se eu tivesse 6 anos.”',
-    subtitle: 'Primeira Intuição · Histórias e Quotidiano',
-    focusDescription:
-      'Histórias visuais, objetos do dia a dia, jogos de observação e zero jargão matemático desnecessário.',
-    pedagogicalGoal: 'Compreender a ideia fundamental por trás do conceito antes de qualquer símbolo.',
-    simComplexityLabel: 'Simulador Visual Simplificado',
+    label: '6 anos',
+    quote: '“Começa pela ideia mais simples possível.”',
+    subtitle: 'Intuição fundamental sem fórmulas (porta de entrada para a matéria do 12.º ano)',
+    focusDescription: 'Histórias, objetos, situações concretas e movimento para construir a primeira compreensão da matéria do 12.º ano.',
+    pedagogicalGoal: 'Criar a intuição primordial do conceito do 12.º ano.',
+    simComplexityLabel: 'Visual & Tátil',
   },
   {
     id: '10',
     badge: '👦 10 ANOS',
-    label: '10 Anos',
-    quote: '“Explica-me como se eu tivesse 10 anos.”',
-    subtitle: 'Descoberta de Padrões · Raciocínio Lógico',
-    focusDescription:
-      'Pequenas experiências, padrões numéricos, comparações concretas e primeiros gráficos intuitivos.',
-    pedagogicalGoal: 'Ligar a intuição visual à lógica de causa e efeito e aos primeiros padrões.',
-    simComplexityLabel: 'Simulador de Padrões e Experiência',
+    label: '10 anos',
+    quote: '“Explica com exemplos e situações concretas.”',
+    subtitle: 'Relações, velocidade de variação e padrões do quotidiano',
+    focusDescription: 'Padrões, comparações de ritmo, gráficos intuitivos e primeiras relações lógicas.',
+    pedagogicalGoal: 'Ligar a intuição a relações de causa e efeito.',
+    simComplexityLabel: 'Padrões & Ritmos',
   },
   {
     id: '14',
     badge: '🧑 14 ANOS',
-    label: '14 Anos',
-    quote: '“Explica-me como se eu tivesse 14 anos.”',
-    subtitle: 'Ponte para o Formal · Gráficos e Relações',
-    focusDescription:
-      'Símbolos matemáticos essenciais, leitura de gráficos, declives, tabelas e fórmulas com significado claro.',
-    pedagogicalGoal: 'Construir a ponte segura entre a intuição concreta e a matemática do ensino secundário.',
-    simComplexityLabel: 'Simulador Gráfico e Algébrico',
+    label: '14 anos',
+    quote: '“Explica com mais matemática, mas sem complicar.”',
+    subtitle: 'Ponte algébrica: símbolos, declives e relações numéricas',
+    focusDescription: 'Fórmulas intuitivas, símbolos matemáticos, coordenadas e transição para o ensino secundário.',
+    pedagogicalGoal: 'Construir a ponte entre o visual e a linguagem algébrica.',
+    simComplexityLabel: 'Algébrico & Gráfico',
   },
   {
     id: '18',
     badge: '🎓 18 ANOS',
-    label: '18 Anos',
-    quote: '“Explica-me como se eu tivesse 18 anos.”',
-    subtitle: 'Rigor do 12.º Ano · Domínio e Exame Nacional',
-    focusDescription:
-      'Definições rigorosas, propriedades, demonstrações, estratégias de resolução, erros frequentes e questões de Exame Nacional.',
-    pedagogicalGoal: 'Dominar o programa oficial de Matemática A do 12.º ano com compreensão profunda e preparação para exame.',
-    simComplexityLabel: 'Laboratório Analítico Completo',
+    label: '18 anos',
+    quote: '“Explica ao nível do 12.º ano e prepara o exame.”',
+    subtitle: 'Rigor matemático total, definições, teoremas e critérios IAVE',
+    focusDescription: 'Definições formais, regras de derivação, demonstrações, armadilhas comuns e exercícios de exame nacional.',
+    pedagogicalGoal: 'Dominar a matéria com o rigor exigido no Exame Nacional de Matemática A.',
+    simComplexityLabel: 'Rigor de Exame IAVE',
   },
   {
     id: 'adulto',
     badge: '🧑 ADULTO',
     label: 'Adulto',
-    quote: '“Explica-me como a um adulto.”',
-    subtitle: 'Porque É Que Isto Existe? · Mundo Real',
-    focusDescription:
-      'Começa pelo problema real que o conceito resolve na ciência, economia, engenharia, medicina e tecnologia.',
-    pedagogicalGoal: 'Perceber finalmente para que serve este conceito na vida real antes de formalizar a matemática.',
-    simComplexityLabel: 'Simulador de Aplicação Prática',
+    quote: '“Explica primeiro porque isto existe e para que serve.”',
+    subtitle: 'Origem histórica, utilidade prática, IA, Finanças e Engenharia',
+    focusDescription: 'Que problema do mundo real foi resolvido com este conceito e onde é aplicado hoje em tecnologia e ciência.',
+    pedagogicalGoal: 'Compreensão profunda do propósito e aplicação prática real.',
+    simComplexityLabel: 'Mundo Real & Otimização',
   },
 ];
-
-export const LEVEL_ORDER: AgeLevel[] = ['6', '10', '14', '18', 'adulto'];
-
-export function getSimplerLevel(current: AgeLevel): AgeLevel | null {
-  if (current === 'adulto') return '14';
-  if (current === '18') return '14';
-  if (current === '14') return '10';
-  if (current === '10') return '6';
-  return null;
-}
-
-export function getNextLevel(current: AgeLevel): AgeLevel | null {
-  if (current === '6') return '10';
-  if (current === '10') return '14';
-  if (current === '14') return '18';
-  if (current === '18') return 'adulto';
-  return null;
-}

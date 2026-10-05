@@ -88,6 +88,7 @@ export default function App() {
               {/* Main Interactive Simulator & Exploration Area */}
               <MainInteractiveArea
                 level={currentLevel}
+                onSelectLevel={setCurrentLevel}
                 onOpenActionModal={setModalAction}
               />
 
